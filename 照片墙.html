@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>照片墙.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100%;
+			height: 500px;
+			background-color: skyblue;
+			position: relative;
+		}
+		ul{
+			width: 850px;
+			height: 200px;
+			position: absolute;
+			top:100px;
+			left:50%;
+			margin-left: -425px;
+
+		}
+		ul>li{
+			list-style: none;
+			width: 200px;
+			height: 200px;
+			float: left;
+			position: relative;
+			margin-right: 10px;
+		}
+		img{
+			width: 100%;
+		}
+		ul>li:nth-child(1){
+			transform: rotateZ(-10deg);
+		}
+		ul>li:nth-child(2){
+			transform: rotateZ(10deg);
+		}
+		ul>li:nth-child(3){
+			transform: rotateZ(30deg);
+		}
+		ul>li:nth-child(4){
+			transform: rotateZ(-10deg);
+		}
+		div:hover li{
+			opacity: 0.5;
+		}
+		div>ul>li:hover {
+			opacity: 1;
+			transform: rotate(0deg) scale(1.5);
+			z-index: 999;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>
+				<img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3362427573,2914693748&fm=27&gp=0.jpg" alt="">
+			</li>
+			<li>
+				<img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2193993016,2026082709&fm=27&gp=0.jpg" alt="">
+			</li>
+			<li>
+				<img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2867042605,1934310642&fm=27&gp=0.jpg" alt="">
+			</li>
+			<li>
+				<img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2836393866,704601257&fm=27&gp=0.jpg" alt="">
+			</li>
+		</ul>
+	</div>
+</body>
+</html>
