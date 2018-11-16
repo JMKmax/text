@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>float.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.fix:after{
+			content: "";
+			clear: both;
+			display: block;
+			visibility: hidden;
+		}
+		.box{
+			width: 500px;
+			border: 1px solid black;
+			margin:30px auto;
+		}
+		.header-left{
+			width: 100px;
+			height: 100px;
+			background: red;
+			float: left;
+		}
+		.header-right{
+			width: 300px;
+			height: 48px;
+			background: gray;
+			float: right;
+		}
+		.header-right-bottom{
+			width: 380px;
+			height: 48px;
+			background: purple;
+			float: right;
+			margin-top: 4px;
+		}
+		.center{
+			margin-top: 5px;
+		}
+		/*.left{
+			width: 398px;
+			height: 280px;
+			float: left;
+		}
+		.left-top{
+			width: 398px;
+			height: 178px;
+		}
+		.top-right{
+			height: 178px;
+			width: 98px;
+			background: pink;
+			float: right;
+			margin-left: 4px;
+		}
+		.top-left{
+			height: 170px;
+			width: 298px;
+			float: left;
+		}
+		.top-left-top{
+			width: 290px;
+			height: 87px;
+			background: yellow;
+			float: left;
+		}
+		.top-left-bottom{
+			width: 290px;
+			height: 87px;
+			background: yellow;
+			margin-top: 4px;
+		}
+		.left-bottom{
+			width: 390px;
+			height: 98px;
+			background: red;
+			margin-top: 4px;
+		}
+		.right{
+			width: 98px;
+			height: 280px;
+			float: right;
+			background: skyblue;
+			margin-left: 4px;
+		}*/
+		.right{
+			width: 98px;
+			height: 280px;
+			float: right;
+			background: skyblue;
+			margin-left: 4px;
+		}
+		.left{
+			width: 398px;
+			height: 280px;
+			float: left;
+		}
+		.top-right{
+			height: 178px;
+			width: 98px;
+			background: pink;
+			float: right;
+			margin-left: 4px;
+		}
+		.top-left{
+			height: 170px;
+			width: 200px;
+			float: left;
+		}
+		.top-left-top{
+			width: 296px;
+			height: 87px;
+			background: yellow;
+		}
+		.top-left-bottom{
+			width: 296px;
+			height: 87px;
+			background: yellow;
+			margin-top: 4px;
+		}
+		.left-bottom{
+			width: 398px;
+			height: 98px;
+			background: red;
+			margin-top: 4px;
+		}
+		.bottom{
+			width: 500px;
+			height: 100px;
+			background: blue;
+			margin-top: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="box fix">
+		<div class="header fix">
+			<div class="header-left"></div>
+			<div class="header-right fix"></div>
+			<div class="header-right-bottom"></div>
+		</div>
+		<div class="center fix">
+			<div class="left ">
+				<div class="left-top fix">
+					<div class="top-left">
+						<div class="top-left-top"></div>
+						<div class="top-left-bottom"></div>
+					</div>
+					<div class="top-right"></div>
+				</div>
+				<div class="left-bottom"></div>
+			</div>
+			<div class="right"></div>
+		</div>
+		<div class="bottom"></div>
+	</div>
+</body>
+</html>
