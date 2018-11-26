@@ -1,7 +1,9 @@
-function tochange(){
-	var obox =document.getElementById('box');
-	obox.style.width="200px";
-}
 
-var obox=document.getElementById('box');
-obox.onclick=tochange
+window.onload = function(){
+	var obox = document.getElementById('box');
+	function tochange(){
+		obox.style.width = '200px';
+	}
+
+	obox.onclick = tochange;
+}

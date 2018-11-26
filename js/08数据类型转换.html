@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>08数据类型转换.html</title>
+	<script>
+		window.onload = function(){
+			var oBox1 = document.getElementById('box1');
+			var oBox2 = document.getElementById('box2');
+			var oBox3 = document.getElementById('box3');
+			function sum(){
+				var res = oBox1+oBox2;
+				alert(res);
+			}
+			oBox3.onclick =sum
+		}
+
+		var a=1;
+		// var b = a.toString();
+		// var b = String(a);
+		var b = a+"";
+		console.log(typeof b);
+		var c = "123";
+		// var d = parseInt(c);
+		var d = parseFloat(c);
+		console.log(typeof d);
+
+	</script>
+</head>
+<body>
+	<input type="text" id="box1">
+	<input type="text" id="box2">
+	<input type="button" value="点我" id="box3">
+</body>
+</html>
