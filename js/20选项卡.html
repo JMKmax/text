@@ -55,7 +55,7 @@
 	var aBtn = document.querySelectorAll('#btn li');
 	var aBox = document.querySelectorAll('#box li');
 	for(var i = 0;i<aBtn.length;i++){
-		 aBtn[i].inset = i;
+		 aBtn[i].index = i;
 		aBtn[i].onclick = function(){
 		for(var j = 0;j<aBtn.length;j++){
 			aBox[j].style.display = 'none';
