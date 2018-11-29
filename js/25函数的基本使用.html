@@ -26,6 +26,7 @@
 	var aBox2 = document.getElementById('box2');
 	function css(obj,attr,val){
 		obj.style[attr] = val;
+
 	}
 	aBtn1.onclick =function(){
 		css(aBox1,'width','200px');
@@ -39,5 +40,6 @@
 		css(aBox1,'background','red');
 		css(aBox2,'background','red');
 	}
+	console.log(getComputedStyle(aBox1,true)['width']);
 </script>
 </html>

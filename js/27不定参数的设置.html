@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>27不定参数的设置.html</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+			border:1px solid #333;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn1">获取</button>
+	<button id="btn2">设置</button>
+	<div id="box"></div>
+</body>
+<script>
+	var aBtn1 = document.getElementById('btn1');
+	var aBtn2 = document.getElementById('btn2');
+	var aBox = document.getElementById('box');
+	function css(obj,attr,val){
+		if(arguments.length ==2){
+			return getComputedStyle(obj,false)[attr];
+		}else{
+			return obj.style[attr] =val;
+		}
+	}
+	aBtn1.onclick = function(){
+			alert(css(aBox,'width'));
+		}
+		aBtn2.onclick = function(){
+			css(aBox,'width','200px');
+		}
+</script>
+</html>
