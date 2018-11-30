@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>29全局变量.html</title>
+	<script>
+		var a = 1;
+		function fa(){
+			console.log("fa",a);
+			var a = 2;//在函数里面用var定义的变量，属于局部变量，只作用在函数里面；
+			function fa2(){
+				console.log('fa2',a)
+			}
+			fa2();//结果是2
+		}
+
+		fa();//结果是undefined;
+		console.log("fa3",a)//结果是1
+		console.log(window);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
