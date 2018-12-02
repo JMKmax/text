@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>相册.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.page{
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+		.page input,
+		.page a{
+			position: fixed;
+			top: 0px;
+			width: 20%;
+			height: 30px;
+		}
+		#ra1,#ra1+a{
+			left: 0%;
+		}
+		#ra2,#ra2+a{
+			left: 20%;
+		}
+		#ra3,#ra3+a{
+			left: 40%;
+		}
+		#ra4,#ra4+a{
+			left: 60%;
+		}
+		#ra5,#ra5+a{
+			left: 80%;
+		}
+		.page a{
+			height: 30px;
+			line-height: 30px;
+			font-size: 18px;
+			text-align: center;
+			background: #2f2f2f;
+			color: #fff;
+			text-decoration: none;
+			z-index: 99;
+		}
+		.page>input{
+			z-index: 100;
+			opacity: 0;
+			cursor: pointer;
+		}
+		.page>input:focus +a{
+			color: #ff6400;
+		}
+		.page>input:hover +a{
+			background-color: #555;
+		}
+		.content{
+			margin-top: 3em;
+			height: 100%;
+			padding-left: 1em;
+			padding-right: 1em;
+		}
+		html,body{
+			height: 100%;
+		}
+		.panl{
+			height: 100%;
+			column-count: 4;
+			column-gap: 1em;
+		}
+		#ra1:checked ~.content{
+			transform: translateY(0%);
+		}
+		#ra2:checked ~.content{
+			transform: translateY(-100%);
+		}
+		#ra3:checked ~.content{
+			transform: translateY(-200%);
+		}
+		#ra4:checked ~.content{
+			transform: translateY(-300%);
+		}
+		#ra5:checked ~.content{
+			transform: translateY(-400%);
+		}
+		.panl-image{
+			width: 100%;
+			background: red;
+			border-radius: 5px;
+			cursor: pointer;
+			overflow: hidden;
+		}
+		.panl-image img{
+			width: 100%;
+			height: 100%;
+			border-radius: 5px;
+			transition:all 0.3s;
+		}
+		.panl-image img:hover{
+			transform: scale(1.1);
+		}
+		.h{
+			height: 65%;
+		}
+		.w{
+			height: 30%;
+		}
+		.m{
+			margin-top: 1em;
+		}
+		.page>#ra1:focus ~.content #tr1,
+		.page>#ra2:focus ~.content #tr2,
+		.page>#ra3:focus ~.content #tr3,
+		.page>#ra4:focus ~.content #tr4,
+		.page>#ra5:focus ~.content #tr5,{
+			animation:sport 1s linear;
+		}
+		@keyframes sport{
+			from{
+				opacity: 0;
+			}
+			to{
+				opacity: 1;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<input type="radio" name="sex" id="ra1">
+		<a href="#">致青春</a>
+		<input type="radio" name="sex" id="ra2">
+		<a href="#">致青春</a>
+		<input type="radio" name="sex" id="ra3">
+		<a href="#">致青春</a>
+		<input type="radio" name="sex" id="ra4">
+		<a href="#">致青春</a>
+		<input type="radio" name="sex" id="ra5">
+		<a href="#">致青春</a>
+		<div class="content">
+			<div class="panl" id="tr1">
+				<div class="panl-image w">
+					<img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=4056676550,3464070&fm=11&gp=0.jpg">
+				</div>
+				<div class="panl-image h m">
+					<img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3008823222,1863039783&fm=27&gp=0.jpg">
+				</div>
+				<div class="panl-image h">
+					<img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3109730541,413999950&fm=27&gp=0.jpg">
+				</div>
+				<div class="panl-image w m">
+					<img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1802517168,1791613861&fm=27&gp=0.jpg">
+				</div>
+				<div class="panl-image w">
+					<img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2543956022,3767105589&fm=27&gp=0.jpg">
+				</div>
+				<div class="panl-image h m">
+					<img src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3084799916,183606947&fm=27&gp=0.jpg">
+				</div>
+				<div class="panl-image h">
+					<img src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=500808421,1575925585&fm=200&gp=0.jpg">
+				</div>
+				<div class="panl-image w m">
+					<img src="https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=428549871,4004515111&fm=27&gp=0.jpg">
+				</div>
+			</div>
+			<div class="panl" id="tr2">2</div>
+			<div class="panl" id="tr3">3</div>
+			<div class="panl" id="tr4">4</div>
+			<div class="panl" id="tr5">5</div>
+		</div>
+	</div>
+</body>
+</html>
