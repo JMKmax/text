@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>40</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			border: 1px solid #000;
+			height: 20px;
+			width: 300px;
+			display: inline-block;
+		}
+		a{
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<textarea  id="txt" cols="60" rows="30"></textarea>
+	<input type="button" id="btn" value="点击">
+	<ul id="ul1">
+		<li>aaa<a href="javascript:;"></a></li>
+	</ul>
+</body>
+<script>
+	var aTxt = document.getElementById('bxt');
+	var aBtn = document.getElementById('btn');
+	var aUl = document.getElementById('ul1');
+
+	aBtn.onclick = function(){
+		var val = aTxt.value;
+		var aLi = document.createElement('li');
+		aLi.innerHTML = val;
+
+		aUl.appendChild(aLi);
+
+	}
+</script>
+</html>

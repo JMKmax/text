@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>46history.html</title>
+</head>
+<body>
+	<button id="btn1">前进</button><button id="btn2">后退</button>
+</body>
+<script>
+	var aBtn1 = document.getElementById('btn1');
+	var aBtn2 = document.getElementById('btn2');
+
+	aBtn1.onclick = function(){
+		window.history.go(1);
+	}
+	aBtn2.onclick = function(){
+		window.history.go(-1);
+	}
+</script>
+</html>

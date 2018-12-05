@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>38隐藏父元素.html</title>
+</head>
+<body>
+	<ul>
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li><a href="#">6</a></li>
+	</ul>
+</body>
+<script>
+	var oUl = document.querySelector('ul');
+	var arr = document.querySelectorAll('a');
+	console.log(arr);
+	for(i = 0;i<arr.length;i++){
+		arr[i].onclick=function(){
+			this.parentNode.style.display = 'none';
+		}
+		
+	}
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>42窗口的位置.html</title>
+</head>
+<script>
+	console.log(window.screenTop);
+	console.log(window.screenLeft);
+	console.log(window.screenY);
+	console.log(window.screenX);
+
+	var at;
+	if(window.screenTop){
+		at =window.screenTop
+	}else{
+		at = window.screenY
+	}
+
+	var ax = window.screenLeft || window.screenX;
+	console.log(at);
+	console.log(ax);
+</script>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>47延迟性定时器.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	// setTimeout(function(){
+	// 	console.log('hahah')
+	// },2000);
+	function show(){
+		console.log('lalala');
+	}
+	var Time = setTimeout(show,2000);
+
+	clearTimeout(Time);
+      console.log(Time);
+
+	// setTimeout('console.log("lalal")',2000);
+</script>
+</html>
