@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>55延迟菜单.html</title>
+</head>
+<style>
+	#left{
+		/*display: block;*/
+		width: 30px;
+		height: 200px;
+		float: left;
+		margin:200px 100px;
+		margin-right: 0px;
+		border: 1px solid #333;
+	}
+	#right{
+		/*display: block;*/
+		float: left;
+		margin:200px 10px;
+		width: 100px;
+		height: 200px;
+		border: 1px solid #333;
+		background-color: skyblue;
+		display: none;
+	}
+</style>
+<body>
+	<div id="left"></div>
+	<div id="right"></div>
+</body>
+<script>
+	var aLeft = document.getElementById('left');
+	var aRight = document.getElementById('right');
+	var first = 0;
+	aLeft.onmouseover = function(){
+		aRight.style.display = "block";
+		clearTimeout(first)
+	}
+	aLeft.onmouseout = function(){
+		aRight.style.display='block';
+		first = setTimeout(function(){
+		 aRight.style.display = 'none';
+		},500)
+	}
+	aRight.onmouseover = function(){
+		aRight.style.display = "block";
+		clearTimeout(first);
+	}
+	aRight.onmouseout =  function(){
+	aRight.style.display  = "block";
+	   first = setTimeout(function(){
+		aRight.style.display = "none"
+	},500)
+}
+</script>
+</html>
