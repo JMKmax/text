@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>65减速动画-封装函数.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.caption{
+			width: 400px;
+			margin:100px auto;
+			background-color: #fff;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			margin-top: 20px;
+			opacity: 0.5;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="caption">
+		<div id="box1"></div>
+		<div id="box2"></div>
+		<div id="box3"></div>
+	</div>
+</body>
+<script>
+	
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	var oBox3 = document.getElementById('box3');
+
+	function pack(obj,attr,targe){
+		clearInterval(obj.timer);
+		var symbol = 0;
+		obj.timer = setInterval(function(){
+
+			var clarity = parseFloat(getComputedStyle(obj,false)[attr]);
+			if(attr == 'opacity'){
+				clarity =Math.round( clarity * 100);
+			}
+
+			if((targe-clarity)>0){
+				symbol =Math.ceil((targe-clarity)/10);
+			}else{
+				symbol =Math.floor((targe-clarity)/10);
+			}
+			
+
+			if(!symbol){
+				clearInterval(obj.timer);
+			}else{
+				if(attr == 'opacity'){
+					obj.style.opacity = (clarity + symbol)/100;
+				}else{
+					obj.style[attr] = clarity + symbol + 'px';
+				}
+			
+		}
+		},30)
+
+	}
+
+	oBox1.onmouseover = function(){
+		pack(oBox1,'width',400);
+	}
+	oBox2.onmouseover = function(){
+		pack(oBox2,'height',400);
+	}
+	oBox3.onmouseover = function(){
+		pack(oBox3,'opacity',100);
+	}
+	oBox1.onmouseout = function(){
+		pack(oBox1,'width',100);
+	}
+	oBox2.onmouseout = function(){
+		pack(oBox2,'height',100);
+	}
+	oBox3.onmouseout = function(){
+		pack(oBox3,'opacity',50);
+	}
+
+
+</script>
+</html>
