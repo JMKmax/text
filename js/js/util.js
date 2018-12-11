@@ -1,3 +1,4 @@
+
 function pack(obj,attr,targe){
 		clearInterval(obj.timer);
 		var symbol = 0;
@@ -7,10 +8,10 @@ function pack(obj,attr,targe){
 			if(attr == 'opacity'){
 				clarity =Math.round( clarity * 100);
 			}
-			if((clarity-targe)<=0){
-				symbol = 2;
+			if((clarity-targe)<0){
+				symbol = 10;
 			}else{
-				symbol = -2;
+				symbol = -10;
 			}
 			if(Math.abs(targe-clarity)<Math.abs(symbol)){
 				if(attr == 'opacity'){
@@ -29,4 +30,11 @@ function pack(obj,attr,targe){
 			
 		}
 		},30)
+	}
+
+function getScrollTop(){
+	return  window.pageYOffset || document.documentElement.scrollTop
+		 || document.body.scrollTop;
+  	}
+		
 

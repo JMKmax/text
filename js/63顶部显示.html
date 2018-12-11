@@ -13,9 +13,12 @@
 			background-color: #ccc;
 		}
 		#header{
-			height: 100px;
+			/*height: 100px;*/
 			width: 100%;
 			background-color: #f68;
+			position: fixed;
+			top: 0px;
+			left: 0px;
 		}
 		.main{
 			height: 3000px;
@@ -28,10 +31,26 @@
 	<div id="header"></div>
 	<div class="main"></div>
 </body>
+<script src="js/util.js"></script>
 <script>
 	
 	var aBox = document.getElementById('header');
+	var isshow = false;
+	window.onscroll = function(){
+		if(getScrollTop() >= 100){
+			if(!isshow){
+				pack(aBox,'height',100);
+				isshow = true;
+			}
+			
+		}else{
+			if(isshow){
+				pack(aBox,'height',0)
+				isshow = false;
+			}
+			
+		}
+	}
 
-	
 </script>
 </html>
