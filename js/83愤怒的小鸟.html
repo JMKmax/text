@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>83愤怒的小鸟.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#wrap{
+			width: 500px;
+			height: 500px;
+			margin:100px auto;
+			border: 1px solid #000;
+			position: relative;
+			overflow: hidden;
+
+		}
+		#bird{
+			width: 45px;
+			height: 45px;
+			position: absolute;
+			top: 0px;
+			left: 50%;
+			margin-left: -30px;
+			background-image: url(images/bird.jpg);
+			background-repeat: no-repeat;
+			background-size: 45px 45px;
+		}
+		.topline{
+			width: 30px;
+			background-color: skyblue;
+			position: absolute;
+			top: 0px;
+			left: 100%
+		}
+		.bottomline{
+			width: 30px;
+			background-color: skyblue;
+			position: absolute;
+			bottom: 0px;
+			left: 100%
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="bird"></div>
+	</div>
+</body>
+<script>
+	var oBird = document.getElementById('bird');
+	var oWrap = document.getElementById('wrap');
+
+	var moveBirdTime = 0,addlingTime = 0,movelingTime = 0;
+	var iSpeed = 0;
+	var spaceHeight =260;
+	var isdie = false
+
+
+	function getRandom(min,max){
+		return     Math.round(min+(max-min)*Math.random());
+	}
+	function peng(obj1,obj2){
+
+			if(obj1.offsetLeft+obj1.offsetWidth>obj2.offsetLeft
+				&& obj1.offsetHeight+obj1.offsetTop>obj2.offsetTop
+				&&obj2.offsetLeft+obj2.offsetWidth>obj1.offsetLeft
+				&& obj2.offsetHeight+obj2.offsetTop>obj1.offsetTop){
+					return true;
+			}else{
+				return false;
+			}
+
+
+		}
+
+
+
+
+	function addling(){
+		var oTopling = document.createElement('div');
+		var oBottomling = document.createElement('div');
+
+		oTopling.className = 'topline';
+		oBottomling.className = 'bottomline';
+		var h = getRandom(100,260);
+		oTopling.style.height = h + 'px'
+		oBottomling.style.height = oWrap.offsetHeight - h -spaceHeight + 'px';
+
+
+		oTopling.leftDate = 100;
+
+		oWrap.appendChild(oTopling);
+		oWrap.appendChild(oBottomling);
+	}
+
+	addling();
+	
+	clearInterval(addlingTime);
+	addlingTime = setInterval(addling,800);
+
+	clearInterval(movelingTime);
+	movelingTime = setInterval(function(){
+		var aTopling = document.querySelectorAll('.topline');
+		var aBottomling = document.querySelectorAll('.bottomline');
+
+
+
+		for(var i = 0; i<aTopling.length;i++){
+
+
+			if(peng(oBird,aTopling[i])  || peng(oBird,aBottomling[i])){
+			die();
+			}
+
+			aTopling[i].style.left = aBottomling[i].style.left= aTopling[i].leftDate - 1 +'%';
+			aTopling[i].leftDate = aTopling[i].leftDate -1;
+
+			if(aTopling[i].leftDate < -20){
+
+				oWrap.removeChild(aTopling[i]);
+				oWrap.removeChild(aBottomling[i]);
+			}
+		}
+
+	},30)
+
+	clearInterval(moveBirdTime);
+	moveBirdTime = setInterval(function(){
+		iSpeed += 1;
+		var t = oBird.offsetTop + iSpeed;
+		if(t<=0){
+			t=0;
+			die();
+		}else if(t>=oWrap.offsetHeight - oBird.offsetHeight-2){
+			t = oWrap.offsetHeight -oBird.offsetHeight-2;
+			die()
+		}
+		oBird.style.top = t + 'px';
+	},30)
+
+	document.onkeydown = function(){
+
+		if(isdie){
+			return false
+		}
+		iSpeed += -15;
+	}
+
+	function die(){
+
+		isdie = true;
+		clearInterval(moveBirdTime);
+		clearInterval(addlingTime);
+		clearInterval(movelingTime);
+	}
+
+
+</script>
+</html>

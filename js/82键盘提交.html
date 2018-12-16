@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>82键盘提交.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#caption{
+			width: 300px;
+			margin:100px auto;
+		}
+		li{
+			height: 30px;
+			line-height: 30px;
+			list-style: none;
+			border-bottom: 1px dashed #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div id="caption">
+		<input type="text" id="txt">
+		<input type="button" id="btn" value="提交">
+		<ul id="menu">
+			<li>dfaf</li>
+		</ul>
+	</div>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oMenu = document.getElementById('menu');
+
+
+	oTxt.onkeydown = function(ev){
+		if(ev.keyCode == 13){
+			oBtn.onclick();
+		}
+		console.log(ev.keyCode)
+	}
+
+	oBtn.onclick = function(){
+		var oLi = document.createElement('li');
+		oLi.innerHTML = oTxt.value;
+		oMenu.insertBefore(oLi,oMenu.firstChild);
+	}
+
+
+</script>
+</html>

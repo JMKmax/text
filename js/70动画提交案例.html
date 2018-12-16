@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>70动画案例.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.caption{
+			width: 600px;
+			height: 300px;
+			margin:100px auto;
+		}
+		li{
+			width: 400px;
+			height: 40px;
+			border-bottom: 1px solid gray;
+			list-style: none;
+			font-size: 30px;
+			
+
+		}
+	</style>
+</head>
+<body>
+	<div class="caption">
+		<input type="text" id="txt">
+		<button id="btn">点击</button>
+		<ul id="ul1">
+			<li>aaa</li>
+		</ul>
+	</div>
+</body>
+<script src="js/util2.js"></script>
+<script>
+	
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oUl = document.getElementById('ul1');
+
+	oBtn.onclick = function(){
+
+		var oLi = document.createElement('li');
+		oLi.innerHTML = oTxt.value;
+		oUl.insertBefore(oLi,oUl.firstChild);
+
+		oLi.style.height = 0;
+		oLi.style.opacity = 0;
+
+		pack(oLi,{height:40},true,function(){
+			pack(oLi,{opacity:100})
+			})
+		
+		}
+
+
+</script>
+
+
+
+
+
+
+</html>

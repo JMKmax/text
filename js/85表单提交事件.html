@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>85表单提交事件.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		form{
+			width: 300px;
+			margin:100px auto;
+		}
+	</style>
+</head>
+<body>
+	<form action="https://www.kuazhu.com" id="oform">
+		<input type="text" id="txt">
+		<input type="submit" id="sub">
+		<input type="reset" id="res">
+		<p id="wen"></p>
+	</form>
+</body>
+
+<script>
+	var oForm = document.getElementById('oform');
+	var oTxt = document.getElementById('txt');
+	var oSub = document.getElementById('sub');
+	var oRes = document.getElementById('res');
+	var oWen = document.getElementById('wen');
+
+
+	oTxt.onfocus = function(){
+		oWen.style.color = 'skyblue';
+		oWen.style.marginTop =10 + 'px';
+		oWen.innerHTML = '请输入3-6位的用户名';
+	}
+	oTxt.onblur = function(){
+		var len = oTxt.value.length;
+		if(len<3 || len>6){
+			oWen.innerHTML = '用户名不正确';
+		}else{
+			oWen.innerHTML = '';
+		}
+	}
+
+	oTxt.oninput = function(){
+		var len = oTxt.value.length;
+		if(len<3 || len>6){
+			oWen.innerHTML = '用户名不正确';
+		}else{
+			oWen.innerHTML = '';
+		}
+	}
+
+
+
+</script>
+</html>

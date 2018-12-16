@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>88事件委托.html</title>
+</head>
+<body>
+	<ul id="ul1">
+		<li>lili2<a href="javascrip:;" class="en">撤销</a></li>
+		<li>lili2<a href="javascrip:;" class="en">撤销</a></li>
+		<li>lili2<a href="javascrip:;" class="en">撤销</a></li>
+		<li>lili2<a href="javascrip:;" class="en">撤销</a></li>
+		<li>lili2<a href="javascrip:;" class="en">撤销</a></li>
+		<li>lili2<a href="javascrip:;" class="en">撤销</a></li>
+		<li>lili2<a href="javascrip:;" class="en">撤销</a></li>
+		<li>lili2<a href="javascrip:;" class="en">撤销</a></li>
+		<li>lili2<a href="javascrip:;" class="en">撤销</a></li>
+		<li>lili2<a href="javascrip:;" class="en">撤销</a></li>
+	</ul>
+</body>
+<script>
+	var oUl = document.getElementById('ul1');
+	oUl.addEventListener('click',function(ev){
+		console.log(ev.target);
+		if(ev.target.className == 'en'){
+			oUl.removeChild(ev.target.parentNode);
+		}
+	},false)
+</script>
+</html>
