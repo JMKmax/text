@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>92JSON和JS互转.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	
+	var Json = '{"name":"tom","age":18}';
+	var obj = {
+		name:'tom',
+		age:15
+	}
+
+	var Json2Obj = JSON.parse(Json)
+	var obj2Json = JSON.stringify(obj);
+	console.log(Json);
+	console.log(obj);
+	console.log(Json2Obj);
+	console.log(obj2Json)
+</script>
+</html>

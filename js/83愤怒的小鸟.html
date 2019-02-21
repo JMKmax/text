@@ -76,7 +76,30 @@
 
 		}
 
+		function moveline(){
+		var aTopling = document.querySelectorAll('.topline');
+		var aBottomling = document.querySelectorAll('.bottomline');
 
+
+
+		for(var i = 0; i<aTopling.length;i++){
+
+
+			if(peng(oBird,aTopling[i])  || peng(oBird,aBottomling[i])){
+			die();
+			}
+
+			aTopling[i].style.left = aBottomling[i].style.left= aTopling[i].leftDate - 1 +'%';
+			aTopling[i].leftDate = aTopling[i].leftDate -1;
+
+			if(aTopling[i].leftDate < -20){
+
+				oWrap.removeChild(aTopling[i]);
+				oWrap.removeChild(aBottomling[i]);
+			}
+		}
+
+	}
 
 
 	function addling(){
@@ -102,30 +125,16 @@
 	addlingTime = setInterval(addling,800);
 
 	clearInterval(movelingTime);
-	movelingTime = setInterval(function(){
-		var aTopling = document.querySelectorAll('.topline');
-		var aBottomling = document.querySelectorAll('.bottomline');
+	movelingTime = setInterval(moveline,30)
 
+	var mivelingTime2 = 0;
 
-
-		for(var i = 0; i<aTopling.length;i++){
-
-
-			if(peng(oBird,aTopling[i])  || peng(oBird,aBottomling[i])){
-			die();
-			}
-
-			aTopling[i].style.left = aBottomling[i].style.left= aTopling[i].leftDate - 1 +'%';
-			aTopling[i].leftDate = aTopling[i].leftDate -1;
-
-			if(aTopling[i].leftDate < -20){
-
-				oWrap.removeChild(aTopling[i]);
-				oWrap.removeChild(aBottomling[i]);
-			}
-		}
-
-	},30)
+	mivelingTime2 = setTimeout(function(){
+		clearInterval(movelingTime);
+		clearInterval(addlingTime);
+		addlingTime = setInterval(addling,200);
+		movelingTime = setInterval(moveline,10)
+	},5000)
 
 	clearInterval(moveBirdTime);
 	moveBirdTime = setInterval(function(){

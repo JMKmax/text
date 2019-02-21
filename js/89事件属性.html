@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>89事件属性.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			margin:100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+
+	function handle(ev){
+		if(event.type == 'mouseover'){
+			oBox.style.background = 'red';
+		}else if(event.type == 'click'){
+			oBox.style.background = 'purple'
+		}
+	}
+
+	oBox.addEventListener('mouseover',handle,false);
+
+	oBox.addEventListener('click',handle,false)
+</script>
+</html>

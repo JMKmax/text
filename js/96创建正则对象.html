@@ -2,51 +2,44 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>82键盘提交.html</title>
+	<title>96创建正则对象.html</title>
 	<style>
 		*{
 			margin: 0;
 			padding: 0;
-		}
-		#caption{
-			width: 300px;
-			margin:100px auto;
-		}
-		li{
-			height: 30px;
-			line-height: 30px;
 			list-style: none;
-			border-bottom: 1px dashed #ccc;
+		}
+		.box{
+			width: 300px;
+			height: 300px;
+			margin:100px auto;
 		}
 	</style>
 </head>
 <body>
-	<div id="caption">
+	<div class="box">
 		<input type="text" id="txt">
-		<input type="button" id="btn" value="提交">
-		<ul id="menu">
-			<li>dfaf</li>
-		</ul>
+		<button id="btn">点击</button>
+		<ul id="ul1"></ul>
 	</div>
 </body>
 <script>
 	var oTxt = document.getElementById('txt');
 	var oBtn = document.getElementById('btn');
-	var oMenu = document.getElementById('menu');
+	var oUl = document.getElementById('ul1');
 
+	var reg = /a/g;
+	var reg2 = /[a-z]/g
 
 	oTxt.onkeydown = function(ev){
-		if(ev.keyCode == 13 && ev.ctrlKey){
+		if(ev.keyCode == 13){
 			oBtn.onclick();
 		}
 	}
-
 	oBtn.onclick = function(){
 		var oLi = document.createElement('li');
-		oLi.innerHTML = oTxt.value;
-		oMenu.insertBefore(oLi,oMenu.firstChild);
+		 oLi.innerHTML = oTxt.value.replace(reg2,'*');
+		oUl.appendChild(oLi)
 	}
-
-
 </script>
 </html>

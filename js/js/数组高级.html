@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组高级.html</title>
+	<script>
+		var arr = [2,3,6,8,60]
+
+		var ares = arr.every(function(value,index){
+			return value > 6;
+		})
+		console.log(ares);
+
+		var barr = arr.map(function(value,index){
+			return value+10;
+		})
+		console.log(barr);
+		var barrs = arr.filter(function(value,index){
+			return value>5;
+		})
+		console.log(barrs)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

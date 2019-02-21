@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>100nodetest.html</title>
+</head>
+<body>
+	<button id="btn">获取信息</button>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	oBtn.onclick = function(){
+		var oAjax = new XMLHttpRequest();
+
+		oAjax.open('get','http://127.0.0.1：3000/',true);
+
+		oAjax.send();
+
+		oAjax.onreadystatuschange = function(){
+			if(oAjax.readyState == 4){
+				if(oAjax.status == 200){
+					try{
+						var obj = JSON.parse(oAjax.responseText);
+						console.log(obj.name);
+					}catch(e){
+						console.log(e);
+					}
+				}
+			}
+		}
+
+
+
+	}
+</script>
+</html>

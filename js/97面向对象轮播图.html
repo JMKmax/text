@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>97面向对象轮播图.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+		img{
+			width: 500px;
+			height: 300px;
+
+		}
+		.leftarr,.rightarr{
+			position: absolute;
+			width: 30px;
+			height: 80px;
+			line-height: 80px;
+			text-align: center;
+			top: 50%;
+			margin-top: -30px;
+			background-color: rgba(0,0,0,0.5);
+			color: #fff;
+			z-index: 100;
+			cursor: pointer;
+			user-select: none;
+		}
+		.leftarr{
+			left: 0px;
+		}
+		.rightarr{
+			right: 0px;
+		}
+		.bottom{
+			position: absolute;
+			bottom:10px;
+			left: 50%;
+			z-index: 100;
+		}
+		.bottom li{
+			float: left;
+			width: 10px;
+			height: 10px;
+			margin-right: 5px;
+			background-color: rgba(0,0,0,0.5);
+			border-radius: 50%;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	function Carousel(options){
+		this.oBox = document.getElementById(options.id);
+		this.img = options.aimg;
+		this.width = options.width;
+		this.height = options.height;
+		this.oLeftarr = null;
+		this.oRightarr = null;
+		this.now = 0;
+		this.init();
+		this.bind();
+	}
+
+	Carousel.prototype.init = function(){
+		//设置oBox;
+		this.oBox.style.position = 'relative';
+		this.oBox.style.width = this.width + 'px';
+		this.oBox.style.height = this.height + 'px';
+		//生成左右按钮
+		this.oLeftarr = document.createElement('span');
+		this.oRightarr = document.createElement('span');
+		this.oLeftarr.className = 'leftarr';
+		this.oRightarr.className = 'rightarr';
+		this.oLeftarr.innerHTML = '&lt';
+		this.oRightarr.innerHTML = '&gt';
+		//生成ul
+		this.oUlimg = document.createElement('ul');
+		this.oUlBtn = document.createElement('ul');
+		this.oUlBtn.className = 'bottom';
+
+		for(var i = 0;i<this.img.length;i++){
+			//2、生成img的li;
+			this.oLi = document.createElement('li');
+			this.oLi.style.position = 'absolute';
+			this.oLi.style.left = 0;
+			this.oLi.style.top = 0;
+			//生成img
+			this.oImg = document.createElement('img');
+			this.oImg.src = this.img[i];
+			//生成btn;
+			this.oBtn = document.createElement('li');
+			if(i == 0){
+				this.oLi.style.zIndex = 99;
+				this.oLi.style.opacity = 1;
+			}else{
+				this.oLi.style.zIndex = 0;
+				this.oLi.style.opacity = 0.5;
+			}
+
+			//3.追加元素
+			this.oUlBtn.appendChild(this.oBtn);
+			this.oLi.appendChild(this.oImg);
+			this.oUlimg.appendChild(this.oLi);
+			this.oBox.appendChild(this.oUlBtn);
+			this.oBox.appendChild(this.oUlimg);
+			this.oBox.appendChild(this.oLeftarr);
+			this.oBox.appendChild(this.oRightarr);
+			this.oUlBtn.style.marginLeft = - this.oUlBtn.offsetWidth*0.5 + 'px';
+
+		}
+	}
+
+	Carousel.prototype.bind = function(){
+		var _this = this;
+		this.oRightarr.onclick = function(){
+			_this.now++;
+			if(_this.now >=3){
+				_this.now = 0;
+			}
+			_this.lick();
+		}
+		this.oLeftarr.onclick = function(){	
+			_this.now--;
+			if(_this.now <0){
+				_this.now = 2;
+			}
+			_this.lick();			
+		}
+		//绑定底部指示按钮
+		for(var i = 0 ;i<this.oUlBtn.children.length;i++){
+			this.oUlBtn.children[i].index = i;
+			this.oUlBtn.children[i].onclick = function(){
+				_this.now = this.index;
+				_this.lick();
+			}
+		}
+	}
+	Carousel.prototype.lick = function(){
+		for(var i = 0;i < this.img.length;i++){
+			this.oUlimg.children[i].style.zIndex = 0;
+			this.oUlimg.children[i].style.opacity = 0.5;
+		}
+		this.oUlimg.children[this.now].style.zIndex = 99;
+		this.oUlimg.children[this.now].style.opacity = 1;	
+
+	}
+
+	new Carousel({
+		id:'box',
+		aimg:['images/b1.jpg','images/b2.jpg','images/b3.jpg'],
+		width:500,
+		height:300,
+	})
+</script>
+</html>
