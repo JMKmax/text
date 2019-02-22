@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>8-属性操作.html</title>
+</head>
+<body>
+	<input type="text" value="aaa" name="a1">
+	<input type="text" value="bbb" name="b1">
+	<input type="checkbox" checked>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		console.log($('input').attr('name'));
+		console.log($('input').prop('value'));
+		console.log($('input').eq(1).attr('name'));
+		// console.log($('input').attr('name','aaa bbb'));
+		// console.log($('input').prop('value','aaa bbb'));
+		// console.log($('input').removeAttr('name'))
+		console.log($('input').removeProp('name'));
+	})
+</script>
+</html>

@@ -23,5 +23,10 @@
 	$(function(){
 		console.log('hi')
 	})
+	//$冲突的解决方法
+	var kz = jQuery.noConflict(); //释放掉jQuery中的$;
+	kz(function(){
+		console.log('hello')
+	})
 </script>
 </html>

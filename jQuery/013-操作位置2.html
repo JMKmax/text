@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>013-操作位置2.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 200px;
+			height: 200px;
+			margin: 100px auto;
+			border: 1px solid #000;
+			position: relative;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+			top:100px;
+			left: 100px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		console.log($('.son').offset());
+		console.log($('.son').offset({
+			top:100,
+			left:100
+		}))
+		console.log($('.son').position())
+	})
+</script>
+</html>

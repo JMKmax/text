@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>$的冲突.html</title>
+</head>
+<body>
+<script>
+	(function(){
+		window.$ = function(){
+			console.log('text')
+		}
+	})();
+</script>
+
+<script>
+	//释放掉jquery中的$;
+	jQuery.noConflict();
+	$();
+	jQuery(function(){
+		console.log('hello')
+	})
+</script>
+</body>
+</html>

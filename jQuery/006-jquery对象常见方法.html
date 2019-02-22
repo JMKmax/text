@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>6-jquery对象常见方法.html</title>
+</head>
+<body>
+	<div>div1</div>
+	<div class="div2" data-key = 'bbb'>div2</div>
+	<div>div3</div>
+	<div>div4</div>
+	<div>div5</div>
+</body>
+<script src="js/jquery-1.12.4.js"></script>
+<script>
+	$(function(){
+		console.log($('div').index($('.div2')));
+		console.log($('div').index(document.querySelector('.div2')))
+		$('div').each(function(index,element){
+			// console.log(index,element);
+			console.log(this)
+		})
+		$('.div2').data('test','aaa');
+		console.log($('.div2').data('test'))
+		console.log($('.div2').data('key'))
+	})
+</script>
+</html>
