@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>018-自定义时间.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			margin: 100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+<script src= 'js/jquery-1.12.4.js'></script>
+<script>
+$(function(){
+	$('div').on('cli',function(ev,atr){
+		console.log('hello',atr);
+	})
+	$('div').trigger('cli','abc');
+})
+</script>
+</html>

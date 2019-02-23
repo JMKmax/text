@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>019-事件的委托.html</title>
+</head>
+<body>
+	<button>生成</button>
+	<ul>
+		<li>我是li1</li>
+		<li>我是li2</li>
+		<li>我是li3</li>
+		<li>我是li4</li>
+		<li>我是li5</li>
+		<li>我是li6</li>
+	</ul>
+</body>
+<script src= 'js/jquery-1.12.4.js'></script>
+<script>
+$(function(){
+	$('ul').on('click','li',function(){
+		console.log(this)
+	})
+	$('button').on('click',function(){
+		var oLi = document.createElement('li');
+		oLi.innerHTML = '我是创建的';
+		$('ul')[0].appendChild(oLi)
+	})
+})
+</script>
+</html>
