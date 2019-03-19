@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Mar-19-构造函数及继承.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	class Person{
+		constructor(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		sayName(){
+			console.log('I am '+this.name)
+		}
+		static sahHi(){
+			console.log('Hi....')
+		}
+	}
+	class Student extends Person{
+		constructor(name,age,hobby){
+			super(name,age);
+			this.hobby = hobby;
+		}
+		sayHobby(){
+			console.log('I like '+this.hobby)
+		}
+	}
+	let s = new Student('Tom',18,'basketball');
+	s.sayName();
+	s.sayHobby();
+	Student.sahHi()
+</script>
+</html>
