@@ -2,10 +2,10 @@
 * @Author: jing
 * @Date:   2019-03-13 18:13:58
 * @Last Modified by:   jing
-* @Last Modified time: 2019-03-13 21:01:03
+* @Last Modified time: 2019-03-20 10:10:05
 */
 .link{
-	text-decoration: none;
+	text-decoration: none !important;
 }
 .link:hover{
 	color: #f9f !important;
@@ -63,7 +63,32 @@
 .footer-page .pagination>li>a{
 	color: #333;
 }
-.panel-center img{
-	width: 50px;
-	height: 50px;
+.panel-center .media-object{
+	width: 100px;
+	height: 100px;
+}
+.panel-center .panel-heading{
+	background: transparent;
+	border:none;
+}
+.panel-center .panel-body{
+	background: #f7f7f7
+}
+.hot-list .panel-body{
+	padding-left: 0;
+	padding-right: 0;
+}
+.hot-list .list-group-item{
+	border:none;
+	background: #f7f7f7;
+}
+.text-ellipsis{
+	color: #333;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display:block;
+}
+footer{
+	text-align: center;
 }
