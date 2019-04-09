@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>
+  {% block title %}{% endblock %} 
+  </title>
+	<link rel="stylesheet" href="/lib/bootstrap/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  {% block head %}{% endblock %} 
+</head>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top " id="kz-navbar">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand link" href="#">我的博客</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">首页<span class="sr-only">(current)</span></a></li>
+          <li><a href="#" class="link">CSS/HTML</a></li>
+          <li><a href="#" class="link">Javascript</a></li>
+          <li><a href="#" class="link">xuewuzhi</a></li>
+          <li><a href="#" class="link">我的足迹</a></li>
+   
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+  <div class="main">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          {% block content%}{% endblock %}
+        </div>
+        <div class="col-md-4">
+            <div class="form-horizontal user-panel" id='register' style="display: none;">
+            <div class="form-group">
+              <label class="col-sm-4 control-label">用户名</label>
+              <div class="col-sm-6">
+                <input autocomplete="off" type="text" class="form-control" name='username' placeholder="请输入用户名">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-4 control-label">密码</label>
+              <div class="col-sm-6">
+                <input autocomplete="off" type="password" class="form-control" name="password" placeholder="请输入密码">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-4 control-label">重复密码</label>
+              <div class="col-sm-6">
+                <input autocomplete="off" type="password" class="form-control" name="repassword" placeholder="请再次输入密码">
+              </div>
+            </div>            
+            <div class="form-group">
+              <div class="col-sm-offset-4 col-sm-6">
+                <a href="javascript:;" class="btn btn-primary" id='sub-register'>提交</a>
+                <a href="javascript:;" class="link" id='go-login'>已有账号,去登录</a>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <p class="text-danger err"></p>
+              </div>
+            </div>            
+          </div> 
+
+          <div class="form-horizontal user-panel" id='login'>
+            <div class="form-group">
+              <label class="col-sm-4 control-label">用户名</label>
+              <div class="col-sm-6">
+                <input autocomplete="off" type="text" class="form-control" name='username' placeholder="请输入用户名">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-4 control-label">密码</label>
+              <div class="col-sm-6">
+                <input autocomplete="off" type="password" class="form-control" name="password" placeholder="请输入密码">
+              </div>
+            </div>            
+            <div class="form-group">
+              <div class="col-sm-offset-4 col-sm-6">
+                <a href="javascript:;" class="btn btn-primary" id='sub-login'>提交</a>
+                <a href="javascript:;" class="link" id='go-register'>免费注册</a>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-12">
+                <p class="text-danger err"></p>
+              </div>
+            </div>            
+          </div>
+          <div class="ad">
+            <a href="#" class="thumbnail">
+                <img src="img/jianguo.png" alt="...">
+              </a>
+          </div>
+          <div class="ad">
+            <a href="#" class="thumbnail">
+                <img src="img/lo5.jpg" alt="...">
+              </a>
+          </div>
+          <div class="panel panel-default panel-center ">
+            <div class="panel-heading">
+              <h3 class="panel-title">个人简介</h3>
+            </div>
+            <div class="panel-body">
+              <div class="media">
+              <div class="media-left">
+                <a href="#">
+                  <img class="media-object img-circle" src="img/jianguo.png" alt="..." >
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">Tom</h4>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="panel panel-default panel-center hot-list">
+            <div class="panel-heading">
+              <h3 class="panel-title">点击排行</h3>
+            </div>
+            <div class="panel-body">
+              <ul class="list-group">
+              <li class="list-group-item"><a href="#" class="link text-ellipsis">ras justo odio ras justo odio ras justo odio ras justo odioras justo odioras justo odio</a></li>
+              <li class="list-group-item"><a href="#" class="link text-ellipsis">ras justo odio ras justo odio ras justo odio ras justo odioras justo odioras justo odio</a></li>
+              <li class="list-group-item"><a href="#" class="link text-ellipsis">ras justo odio ras justo odio ras justo odio ras justo odioras justo odioras justo odio</a></li>
+              <li class="list-group-item"><a href="#" class="link text-ellipsis">ras justo odio ras justo odio ras justo odio ras justo odioras justo odioras justo odio</a></li>
+              <li class="list-group-item"><a href="#" class="link text-ellipsis">ras justo odio ras justo odio ras justo odio ras justo odioras justo odioras justo odio</a></li>
+            </ul>
+            </div>
+          </div>
+          <div class="panel panel-default panel-center">
+            <div class="panel-heading">
+              <h3 class="panel-title">关注我</h3>
+            </div>
+            <div class="panel-body">
+              <img src="img/jing2.jpg"  class="img-responsive" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    京ICP备11008151号 <a href="#">kuazhu</a><a href="#">京公网安备11010802014853</a>
+  </footer>
+</body>
+<script src="lib/jquery/jquery-1.12.4.js"></script>
+<script src="lib/bootstrap/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="/js/common.js"></script>
+{% block footer %}{% endblock %}
+</html>

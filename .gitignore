@@ -1,2 +1,5 @@
 *.img
 test.html
+anli/blog/node_modules/
+anli/blog/db/
+
