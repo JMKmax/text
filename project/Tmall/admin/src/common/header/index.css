@@ -1,0 +1,17 @@
+/*
+* @Author: jing
+* @Date:   2019-04-25 10:17:47
+* @Last Modified by:   jing
+* @Last Modified time: 2019-04-25 14:33:52
+*/
+.AdminHeader .logo{
+	color:#fff;
+	float:left;
+	font-size: 28px;
+	font-weight: 600;
+	width: 200px;
+}
+.AdminHeader .ant-dropdown-link{
+	float: right;
+	color:#fff;
+}
