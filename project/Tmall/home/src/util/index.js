@@ -2,8 +2,9 @@
 * @Author: macnookpro
 * @Date:   2019-05-20 14:55:32
 * @Last Modified by:   macnookpro
-* @Last Modified time: 2019-05-21 12:04:26
+* @Last Modified time: 2019-05-21 22:14:23
 */
+var Hogan = require('hogan.js')
 var _util = {
 	requst:function(options){
 		var _this = this;
@@ -49,6 +50,11 @@ var _util = {
 		var reg = new RegExp('(^|&)'+key+'=([^|&]*)(&|$)')
 		var result = query.match(reg);
 		return result ? decodeURIComponent(result[2]) : null;
+	},
+	render:function(tpl,data){
+		var template = Hogan.compile(tpl);
+		var output = template.render(data);
+		return output
 	},
 	validate:function(value,type){
 		var value = $.trim(value)

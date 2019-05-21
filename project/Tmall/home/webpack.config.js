@@ -25,6 +25,7 @@ module.exports = {
 		'common':'./src/page/common/index.js',
 		'index':'./src/page/index/index.js',
 		'user-login':'./src/page/user-login/index.js',
+		'user-center':'./src/page/user-center/index.js',
 		'user-register':'./src/page/user-register/index.js',
 		'result':'./src/page/result/index.js',
 	},
@@ -86,13 +87,20 @@ module.exports = {
 			            presets: ['env','es2015','stage-3'],
 			        }
 			    }               
-			}							
+			},
+			{
+			    test:/\.tpl$/,
+			    use: {
+			        loader: 'html-loader'
+			    }               
+			}									
 		]
 	},
 	plugins:[
 	    new htmlWebpackPlugin(getHtmlConfig('index','首页')),
 	    new htmlWebpackPlugin(getHtmlConfig('user-login','用户登陆')),
 	    new htmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
+	    new htmlWebpackPlugin(getHtmlConfig('user-center','用户中心')),
 	    new htmlWebpackPlugin(getHtmlConfig('result','结果页面')),
 	    new CleanWebpackPlugin(),
 	    new MiniCssExtractPlugin({
