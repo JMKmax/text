@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-	<meta charset="UTF-8">
-	<title>KMALL</title>
+	<%=require('html-loader!./common/meta.html')%>
+	<title><%=htmlWebpackPlugin.options.title %></title>
 </head>
 <body>
-	<div>home page</div>
+	<%=require('html-loader!./common/nav.html')%>
+	<%=require('html-loader!./common/search.html')%>
 	<%=require('html-loader!./common/footer.html')%>
 </body>
 </html>

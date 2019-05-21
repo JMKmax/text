@@ -5,9 +5,10 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const publicPath = "/";
 
-const getHtmlConfig = (name)=>({
+const getHtmlConfig = (name,title)=>({
 	template:'./src/view/'+name+'.html',//模板文件
     filename:name+'.html',//输出的文件名
+    title:title,//
     inject:true,//脚本写在那个标签里,默认是true(在body结束后)
     hash:true,//给生成的js/css文件添加一个唯一的hash
     chunks:['common',name]
@@ -24,6 +25,8 @@ module.exports = {
 		'common':'./src/page/common/index.js',
 		'index':'./src/page/index/index.js',
 		'user-login':'./src/page/user-login/index.js',
+		'user-register':'./src/page/user-register/index.js',
+		'result':'./src/page/result/index.js',
 	},
 	//单入口写法二
 	//entry: './src/index.js',
@@ -39,10 +42,11 @@ module.exports = {
 	//配置别名
 	resolve:{
 		alias:{
-			pages:path.resolve(__dirname,'./src/pages'),
+			page:path.resolve(__dirname,'./src/page'),
 			util:path.resolve(__dirname,'./src/util'),
-			api:path.resolve(__dirname,'./src/api'),
+			service:path.resolve(__dirname,'./src/service'),
 			common:path.resolve(__dirname,'./src/common'),
+			node_modules:path.resolve(__dirname,'./node_modules'),
 		}
 	},
 	module: {
@@ -61,12 +65,13 @@ module.exports = {
 			},
 	    //处理图片 
 			{
-				test: /\.(png|jpg|gif|jpeg)$/i,
+				test: /\.(png|jpg|gif|jpeg|ttf|woff2|woff|eot|svg)\??.*$/i,
 				use: [
 			  		{
 			    		loader: 'url-loader',
 			    		options: {
-			      			limit: 100
+			      			limit: 100,
+			      			name:'images/[name].[ext]'
 			    		}
 			  		}
 				]
@@ -85,8 +90,10 @@ module.exports = {
 		]
 	},
 	plugins:[
-	    new htmlWebpackPlugin(getHtmlConfig('index')),
-	     new htmlWebpackPlugin(getHtmlConfig('user-login')),
+	    new htmlWebpackPlugin(getHtmlConfig('index','首页')),
+	    new htmlWebpackPlugin(getHtmlConfig('user-login','用户登陆')),
+	    new htmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
+	    new htmlWebpackPlugin(getHtmlConfig('result','结果页面')),
 	    new CleanWebpackPlugin(),
 	    new MiniCssExtractPlugin({
 	    	filename:'css/[name].css'
@@ -95,5 +102,9 @@ module.exports = {
 	devServer:{
 		contentBase: './dist',//内容的目录
 		port:3002,//服务运行的端口
+		proxy: [{
+			context: ['/user'],
+			target: 'http://localhost:3000',
+	    }]
 	}			
 };
