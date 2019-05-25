@@ -26,7 +26,10 @@ module.exports = {
 		'index':'./src/page/index/index.js',
 		'user-login':'./src/page/user-login/index.js',
 		'user-center':'./src/page/user-center/index.js',
+		'user-update-password':'./src/page/user-update-password/index.js',
 		'user-register':'./src/page/user-register/index.js',
+		'list':'./src/page/list/index.js',
+		'detail':'./src/page/detail/index.js',
 		'result':'./src/page/result/index.js',
 	},
 	//单入口写法二
@@ -47,6 +50,7 @@ module.exports = {
 			util:path.resolve(__dirname,'./src/util'),
 			service:path.resolve(__dirname,'./src/service'),
 			common:path.resolve(__dirname,'./src/common'),
+			images:path.resolve(__dirname,'./src/images'),
 			node_modules:path.resolve(__dirname,'./node_modules'),
 		}
 	},
@@ -100,7 +104,10 @@ module.exports = {
 	    new htmlWebpackPlugin(getHtmlConfig('index','首页')),
 	    new htmlWebpackPlugin(getHtmlConfig('user-login','用户登陆')),
 	    new htmlWebpackPlugin(getHtmlConfig('user-register','用户注册')),
+	    new htmlWebpackPlugin(getHtmlConfig('user-update-password','修改密码')),
 	    new htmlWebpackPlugin(getHtmlConfig('user-center','用户中心')),
+	    new htmlWebpackPlugin(getHtmlConfig('list','商品列表')),
+	    new htmlWebpackPlugin(getHtmlConfig('detail','商品详情')),
 	    new htmlWebpackPlugin(getHtmlConfig('result','结果页面')),
 	    new CleanWebpackPlugin(),
 	    new MiniCssExtractPlugin({
@@ -111,7 +118,7 @@ module.exports = {
 		contentBase: './dist',//内容的目录
 		port:3002,//服务运行的端口
 		proxy: [{
-			context: ['/user'],
+			context: ['/user','/product'],
 			target: 'http://localhost:3000',
 	    }]
 	}			

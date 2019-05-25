@@ -2,7 +2,7 @@
 * @Author: macnookpro
 * @Date:   2019-05-20 14:55:42
 * @Last Modified by:   macnookpro
-* @Last Modified time: 2019-05-21 08:13:23
+* @Last Modified time: 2019-05-25 10:05:58
 */
 var _util = require('util')
 var _user = {
@@ -31,9 +31,25 @@ var _user = {
 			error:error
 		})
 	},
+	updatePassword:function(data,success,error){
+		_util.requst({
+			method:'put',
+			url:'/user/updatePassword',
+			data:data,
+			success:success,
+			error:error
+		})
+	},
 	getUserName:function(success,error){
 		_util.requst({
 			url:'/user/username',
+			success:success,
+			error:error
+		})
+	},
+	getUserInfo:function(success,error){
+		_util.requst({
+			url:'/user/userInfo',
 			success:success,
 			error:error
 		})
