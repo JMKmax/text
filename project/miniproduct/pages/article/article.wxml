@@ -1,0 +1,78 @@
+<import src="./article-item-template/article-item-template.wxml" />
+<view class="container">
+  <swiper circular='true' indicator-dots='true' indicator-color='#000'
+  indicator-active-color='#fa0' autoplay='true' interval='1000'
+  >
+    <swiper-item>
+      <image src="../../images/swiper/1.jpg" class="slide-image"  />
+    </swiper-item>
+    <swiper-item>
+      <image src="../../images/swiper/2.jpg" class="slide-image"  />
+    </swiper-item>
+    <swiper-item>
+      <image src="../../images/swiper/3.jpg" class="slide-image"  />
+    </swiper-item>
+  </swiper>
+  <view class='article-wrap'>
+  <!--
+    <view class='article-item'>
+      <view class='article-head'>
+      <image class='article-head-avator'      src='../../images/avator/1.jpg'></image>
+      <text class='article-head-date'>2019-5-6</text>
+      </view>
+      <text class='article-title'>我是文章标题</text>
+      <image class='article-img' src='../../images/avator/1.jpg'></image>
+      <text class='article-desc'>我是描述</text>
+      <view class='article-footer'>
+      <image class='article-footer-icon' src='../../images/avator/1.jpg'></image>
+      <text class='article-footer-text'>20</text>
+      <image class='article-footer-icon' src='../../images/avator/1.jpg'></image>
+      <text class='article-footer-text'>30</text>
+      </view>
+    </view>
+  -->
+
+    <!--
+    <block wx:for='{{article}}' wx:for-item='article' wx:for-index='idx' wx:key="idx">
+      <view class='article-item'>
+        <view class='article-head'>
+          <image class='article-head-avator' src='{{article.avator}}'></image>
+          <text class='article-head-date'>{{article.date}}</text>
+        </view>
+        <text class='article-title'>{{article.title}}</text>
+        <image class='article-img' src='{{article.img}}'></image>
+        <text class='article-desc'>{{article.desc}}</text>
+        <view class='article-footer'>
+          <image class='article-footer-icon' src='../../images/avator/1.jpg'></image>
+          <text class='article-footer-text'>{{article.star}}</text>
+          <image class='article-footer-icon' src='../../images/avator/2.jpg'></image>
+          <text class='article-footer-text'>{{article.view}}</text>        
+        </view>
+      </view>    
+    </block>   
+    -->
+    <block wx:for='{{article}}' wx:for-item='article' wx:for-index='idx' wx:key="index">  
+    <!--
+       <view class='article-item'>
+        <view class='article-head'>
+          <image class='article-head-avator' src='{{item.avator}}'></image>
+          <text class='article-head-date'>{{item.date}}</text>
+        </view>
+        <text class='article-title'>{{item.title}}</text>
+        <image class='article-img' src='{{item.img}}'></image>
+        <text class='article-desc'>{{item.desc}}</text>
+        <view class='article-footer'>
+          <image class='article-footer-icon' src='../../images/avator/1.jpg'></image>
+          <text class='article-footer-text'>{{item.star}}</text>
+          <image class='article-footer-icon' src='../../images/avator/2.jpg'></image>
+          <text class='article-footer-text'>{{item.view}}</text>        
+        </view>
+      </view> 
+    --> 
+    <view bindtap='tapArtileDetail' data-article-id='{{article.articleId}}'>
+    <template is="articleItem" data="{{...article}}" />
+    </view>
+    </block>    
+
+  </view>
+</view>

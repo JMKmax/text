@@ -1,0 +1,39 @@
+.article-wrap{
+  width: 100%;
+}
+.article-head-avator{
+  margin: 10px 0 10px 10px;
+  height: 60rpx;
+  width: 60rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+.article-head-date{
+  margin-left: 10px;
+  font-size: 12px;
+}
+.article-title{
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.article-img{
+  margin:10px 0;
+}
+.article-desc{
+  margin-left: 10px;
+  font-size: 14px;
+  color: #333;
+}
+.article-footer{
+  margin: 10px 0 10px 10px;
+}
+.article-footer-icon{
+  width: 36rpx;
+  height: 36rpx;
+}
+.article-footer-text{
+  color: #ccc;
+  margin-left: 5px;
+  margin-right: 10px;
+}

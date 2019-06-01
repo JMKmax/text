@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/article/article",
+    "pages/movie/movie",
+    "pages/article/article-detail/article-detail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#000",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor":"#fb3",
+    "list": [
+      {
+        "pagePath": "pages/article/article",
+        "text": "文章"
+      },
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "电影"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap64.json"
+}

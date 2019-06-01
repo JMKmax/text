@@ -1,18 +1,17 @@
 <template>
-  <div id="app">
-    app
-     <logo />
+  <div id="app">  
+     <router-view></router-view>
+     <TabBar />
   </div>
 
 </template>
 
 <script>
-import logo from './components/logo.vue'
-
+import TabBar from './components/TabBar/TabBar'
 export default {
   name: 'app',
-  components: {
-    logo
+  components:{
+  	TabBar
   }
 }
 </script>
