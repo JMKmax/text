@@ -1,0 +1,14 @@
+@import '../star-template/star-template.wxss'
+.item-wrap{
+  display: flex;
+  flex-direction: column;
+}
+.item-wrap>image{
+  width: 220rpx;
+  height: 260rpx;
+  margin-bottom: 5px;
+}
+.item-wrap .title{
+  font-size: 32rpx;
+  font-weight: 600;
+}

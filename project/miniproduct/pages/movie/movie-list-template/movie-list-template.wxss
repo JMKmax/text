@@ -1,0 +1,18 @@
+@import '../movie-item-template/movie-item-template.wxss'
+.list-wrap{
+  padding: 10px 10px 0 10px;
+  margin-bottom: 15px;
+}
+.list-wrap .head{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 36rpx;
+  color: #333;
+  margin-bottom: 10px;
+}
+.list-wrap .list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

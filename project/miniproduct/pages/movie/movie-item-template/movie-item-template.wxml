@@ -1,0 +1,8 @@
+<import src="../star-template/star-template.wxml" />
+<template name="movieItemTemplate">
+  <view class='item-wrap'>
+    <image src='/images/avator/2.jpg'></image>
+    <text class='title'>我是名字</text>
+    <template is="starTemplate" />
+  </view>
+</template>

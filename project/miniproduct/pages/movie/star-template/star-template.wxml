@@ -1,0 +1,8 @@
+<template name="starTemplate">
+  <view class='star-wrap'>
+    <image src='/images/icon/star.jpg'></image>
+    <image src='/images/icon/star.jpg'></image>
+    <image src='/images/icon/star.jpg'></image>
+    <text class='score'>6</text>
+  </view>
+</template>
