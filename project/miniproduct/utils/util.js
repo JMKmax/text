@@ -1,19 +1,37 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
-
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+function getMovieListData(url,success){
+  wx.request({
+    url: url,
+    method: 'GET',
+    header: {
+      "Content-Type": "application/xml"
+    },
+    success: function (res) {
+      success(mapData(res.data.subjects))
+    }
+  });
 }
-
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
+function mapData(data){
+  return data.map(function (item) {
+    return {
+      coverImg: item.images.large,
+      title: item.title,
+      stars: coverStarArray(item.rating.stars),
+      score: item.rating.average
+    }
+  })
 }
-
+function coverStarArray(stars){
+  var num = stars.toString().substring(0,1);
+  var arr = [];
+  for(var i = 1;i<=5;i++){
+    if(i<=num){
+      arr.push(1)
+    }else{
+      arr.push(0)
+    }
+  }
+  return arr;
+}
 module.exports = {
-  formatTime: formatTime
+  getMovieListData: getMovieListData
 }

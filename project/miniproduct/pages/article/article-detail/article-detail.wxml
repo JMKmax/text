@@ -1,7 +1,7 @@
 <view class='container article-detail'>
   <view class='focus'>
     <image class='focus-bg' src='{{avator}}'></image>
-    <image bindtap='tapMusic' class='focus-music'  src='{{isPlaying ?"../../../images/icon/share.png" :"../../../images/avator/2.jpg"}}'></image>
+    <image bindtap='tapMusic' class='focus-music'  src='{{isPlaying ?"../../../images/icon/pause.png" :"../../../images/icon/qqyinle.png"}}'></image>
   </view>
   <view class='head'>
     <image class='avatar'  src='../../../images/avator/1.jpg'></image>
