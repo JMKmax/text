@@ -1,0 +1,94 @@
+/*
+* @Author: macnookpro
+* @Date:   2019-05-20 14:55:42
+* @Last Modified by:   macnookpro
+* @Last Modified time: 2019-06-10 20:53:34
+*/
+var _util = require('util')
+var _cart = {
+	addCart:function(data,success,error){
+		_util.requst({
+			url:'/cart',
+			method:'post',
+			data:data,
+			success:success,
+			error:error
+		})
+	},
+	getCartCount:function(success,error){
+		_util.requst({
+			url:'/cart/count',
+			success:success,
+			error:error
+		})
+	},
+	getCart:function(success,error){
+		_util.requst({
+			url:'/cart',
+			success:success,
+			error:error
+		})
+	},
+	selectOne:function(data,success,error){
+		_util.requst({
+			url:'/cart/selectOne',
+			method:'put',
+			data:data,
+			success:success,
+			error:error
+		})
+	},
+	unselectOne:function(data,success,error){
+		_util.requst({
+			url:'/cart/unselectOne',
+			method:'put',
+			data:data,
+			success:success,
+			error:error
+		})
+	},
+	selectAll:function(success,error){
+		_util.requst({
+			url:'/cart/selectAll',
+			method:'put',
+			success:success,
+			error:error
+		})
+	},
+	unselectAll:function(success,error){
+		_util.requst({
+			url:'/cart/unselectAll',
+			method:'put',
+			success:success,
+			error:error
+		})
+	},
+	deleteOne:function(data,success,error){
+		_util.requst({
+			url:'/cart/deleteOne',
+			method:'put',
+			data:data,
+			success:success,
+			error:error
+		})
+	},
+	deleteSelected:function(success,error){
+		_util.requst({
+			url:'/cart/deleteSelected',
+			method:'put',
+			success:success,
+			error:error
+		})
+	},
+	updateCount:function(data,success,error){
+		_util.requst({
+			url:'/cart/updateCount',
+			method:'put',
+			data:data,
+			success:success,
+			error:error
+		})
+	},
+	
+}
+module.exports = _cart

@@ -30,6 +30,8 @@ module.exports = {
 		'user-register':'./src/page/user-register/index.js',
 		'list':'./src/page/list/index.js',
 		'detail':'./src/page/detail/index.js',
+		'cart':'./src/page/cart/index.js',
+		'order-confirm':'./src/page/order-confirm/index.js',
 		'result':'./src/page/result/index.js',
 	},
 	//单入口写法二
@@ -108,6 +110,8 @@ module.exports = {
 	    new htmlWebpackPlugin(getHtmlConfig('user-center','用户中心')),
 	    new htmlWebpackPlugin(getHtmlConfig('list','商品列表')),
 	    new htmlWebpackPlugin(getHtmlConfig('detail','商品详情')),
+	    new htmlWebpackPlugin(getHtmlConfig('cart','购物车')),
+	    new htmlWebpackPlugin(getHtmlConfig('order-confirm','订单详情')),
 	    new htmlWebpackPlugin(getHtmlConfig('result','结果页面')),
 	    new CleanWebpackPlugin(),
 	    new MiniCssExtractPlugin({
@@ -118,7 +122,7 @@ module.exports = {
 		contentBase: './dist',//内容的目录
 		port:3002,//服务运行的端口
 		proxy: [{
-			context: ['/user','/product'],
+			context: ['/user','/product','/cart','/order'],
 			target: 'http://localhost:3000',
 	    }]
 	}			

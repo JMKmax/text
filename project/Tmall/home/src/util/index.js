@@ -2,7 +2,7 @@
 * @Author: macnookpro
 * @Date:   2019-05-20 14:55:32
 * @Last Modified by:   macnookpro
-* @Last Modified time: 2019-05-22 10:15:50
+* @Last Modified time: 2019-06-10 19:44:24
 */
 var Hogan = require('hogan.js')
 var _util = {
@@ -35,6 +35,9 @@ var _util = {
 	},
 	showSuccessMsg:function(msg){
 		alert(msg)
+	},
+	confirm:function(msg){
+		return window.confirm(msg)
 	},
 	goLogin:function(){
 		window.location.href = './user-login.html?redirect='+window.location.href

@@ -1,8 +1,8 @@
 /*
 * @Author: Tom
 * @Date:   2018-08-06 09:23:30
-* @Last Modified by:   jing
-* @Last Modified time: 2019-04-25 17:12:27
+* @Last Modified by:   macnookpro
+* @Last Modified time: 2019-06-09 22:20:37
 */
 const Router = require('express').Router;
 
@@ -14,7 +14,7 @@ const hmac = require('../util/hmac.js')
 
 const router = Router();
 
-/*
+
 router.get("/init",(req,res)=>{
 	//插入数据到数据库
 	new UserModel({
@@ -30,7 +30,7 @@ router.get("/init",(req,res)=>{
 		}
 	})
 });
-*/
+
 /*
 router.get('/init',(req,res)=>{
 	const users = []
@@ -49,7 +49,6 @@ router.get('/init',(req,res)=>{
 	})
 })
 */
-
 
 //用户登录
 router.post("/login",(req,res)=>{
